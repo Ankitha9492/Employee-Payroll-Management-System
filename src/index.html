@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Payroll System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2>Employee Payroll System</h2>
+    <a href="/showNewEmployeeForm">Add New Employee</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th><th>Designation</th><th>Base Salary</th><th>Bonus</th>
+                <th>Deductions</th><th>Total</th><th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emp : ${listEmployees}">
+                <td th:text="${emp.name}"></td>
+                <td th:text="${emp.designation}"></td>
+                <td th:text="${emp.baseSalary}"></td>
+                <td th:text="${emp.bonus}"></td>
+                <td th:text="${emp.deductions}"></td>
+                <td th:text="${emp.totalSalary}"></td>
+                <td>
+                    <a th:href="@{'/showFormForUpdate/' + ${emp.id}}">Edit</a> |
+                    <a th:href="@{'/deleteEmployee/' + ${emp.id}}" onclick="return confirm('Delete this employee?');">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

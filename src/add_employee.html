@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Employee</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<h2>Add Employee</h2>
+	<form action="/saveEmployee" method="post">
+		<label>Name:</label> <input type="text" name="name" required><br>
+		<label>Designation:</label> <input type="text" name="designation"
+			required><br> <label>Base Salary:</label> <input
+			type="number" step="0.01" name="baseSalary" required><br>
+		<label>Bonus:</label> <input type="number" step="0.01" name="bonus"><br>
+		<label>Deductions:</label> <input type="number" step="0.01"
+			name="deductions"><br>
+		<button type="submit">Save</button>
+	</form>
+	<a href="/">Back</a>
+</body>
+</html>
